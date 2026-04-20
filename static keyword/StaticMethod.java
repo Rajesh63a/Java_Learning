@@ -1,4 +1,4 @@
-class Calculator{
+class Calculation{
 
     //int c = 10;
     //int d = 20;
@@ -18,11 +18,11 @@ class Calculator{
 class StaticMethod{
     public static void main(String[] args){
 
-        int resadd = Calculator.add(2, 3);   // for calling static methods we dont need object we can add using class name
+        int resadd = Calculation.add(2, 3);   // for calling static methods we dont need object we can add using class name
         System.out.println(resadd);
 
 
-        int resmul = Calculator.mul(2, 3);
+        int resmul = Calculation.mul(2, 3);
         System.out.println(resmul);
 
 
