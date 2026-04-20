@@ -1,82 +1,122 @@
-📦 Encapsulation in Java
-🧠 What is Encapsulation?
+# 📦 Encapsulation in Java – Complete Guide
+
+## What is Encapsulation?
 
 Encapsulation is one of the core principles of Object-Oriented Programming (OOP).
 
-Encapsulation means wrapping data (variables) and methods (functions) together in a single unit (class) and restricting direct access to the data.
+> **Encapsulation means wrapping data (variables) and methods (functions) together in a single unit (class) and restricting direct access to the data.**
 
 In simple terms:
 
-Hide internal data
-Allow controlled access using methods
-🏦 Real-Life Example
+* Hide internal data
+* Allow controlled access using methods
 
-Think of a bank account:
+---
 
-You cannot directly access or change your balance
-You use methods like:
-deposit()
-withdraw()
-getBalance()
+## Real-Life Example
+
+Think of a **bank account**:
+
+* You cannot directly access or change your balance
+* You use methods like:
+
+  * `deposit()`
+  * `withdraw()`
+  * `getBalance()`
 
 This ensures:
 
-No invalid operations
-Secure handling of data
-🔐 Key Components of Encapsulation
+* No invalid operations
+* Secure handling of data
+
+---
+
+## Key Components of Encapsulation
 
 Encapsulation mainly involves:
 
-Private variables (Data Hiding)
-Getter methods (Read access)
-Setter methods (Write access)
-this keyword (Reference current object)
-🔒 1. Private Variables
+1. **Private variables (Data Hiding)**
+2. **Getter methods (Read access)**
+3. **Setter methods (Write access)**
+4. **`this` keyword (Reference current object)**
 
-Variables are declared as private to restrict direct access.
+---
 
+## 1. Private Variables
+
+Variables are declared as `private` to restrict direct access.
+
+```java
 class Student {
-private int age;
+    private int age;
 }
-❗ Why private?
-Prevents direct modification
-Protects data from invalid values
-🔓 2. Getter Method (Read Access)
+```
 
-Used to retrieve the value of a private variable.
+### Why private?
 
+* Prevents direct modification
+* Protects data from invalid values
+
+---
+
+## 2. Getter Method (Read Access)
+
+Used to **retrieve** the value of a private variable.
+
+```java
 public int getAge() {
-return age;
+    return age;
 }
-💡 Naming Convention:
-get + VariableName (camelCase)
-Example: getAge(), getName()
-✏️ 3. Setter Method (Write Access)
+```
 
-Used to update the value of a private variable.
+### Naming Convention:
 
+* `get` + VariableName (camelCase)
+* Example: `getAge()`, `getName()`
+
+---
+
+## 3. Setter Method (Write Access)
+
+Used to **update** the value of a private variable.
+
+```java
 public void setAge(int age) {
-if (age > 0) {   // validation
-this.age = age;
+    if (age > 0) {   // validation
+        this.age = age;
+    }
 }
-}
-💡 Naming Convention:
-set + VariableName
-Example: setAge(), setSalary()
-🎯 4. Understanding this Keyword
+```
 
-The this keyword refers to the current object.
+### Naming Convention:
 
+* `set` + VariableName
+* Example: `setAge()`, `setSalary()`
+
+---
+
+## 4. Understanding `this` Keyword
+
+The `this` keyword refers to the **current object**.
+
+```java
 public void setAge(int age) {
-this.age = age;
+    this.age = age;
 }
-🤔 Why use this?
+```
+
+### Why use `this`?
 
 Because:
 
-age (parameter) and age (instance variable) have same name
-this.age refers to the class variable
-💻 Complete Example
+* `age` (parameter) and `age` (instance variable) have same name
+* `this.age` refers to the class variable
+
+---
+
+## Complete Example
+
+```java
 class Employee {
 
     private String name;
@@ -106,9 +146,13 @@ class Employee {
         }
     }
 }
-Usage:
+```
+
+### Usage:
+
+```java
 public class Main {
-public static void main(String[] args) {
+    public static void main(String[] args) {
 
         Employee emp = new Employee();
 
@@ -119,15 +163,30 @@ public static void main(String[] args) {
         System.out.println(emp.getSalary());
     }
 }
-❌ Without Encapsulation (Bad Practice)
+```
+
+---
+
+## Without Encapsulation (Bad Practice)
+
+```java
 class Student {
-public int age;
+    public int age;
 }
+```
+
+```java
 Student s = new Student();
-s.age = -10;   // ❌ invalid but allowed
-✅ With Encapsulation (Good Practice)
+s.age = -10;   // invalid but allowed
+```
+
+---
+
+## With Encapsulation (Good Practice)
+
+```java
 class Student {
-private int age;
+    private int age;
 
     public void setAge(int age) {
         if (age > 0) {
@@ -139,18 +198,60 @@ private int age;
         return age;
     }
 }
-🔄 Execution Flow
-Object is created
-Setter method is called → sets value with validation
-Getter method is called → retrieves value
-🎯 Advantages of Encapsulation
-✔ Data hiding (security)
-✔ Controlled access
-✔ Validation before updating data
-✔ Improved maintainability
-✔ Flexibility to change internal implementation
-⚠️ Important Notes
-Always keep variables private
-Use public getters/setters to access them
-Add validation logic inside setters
-Avoid unnecessary setters if data should not change
+```
+
+---
+
+## Execution Flow
+
+1. Object is created
+2. Setter method is called → sets value with validation
+3. Getter method is called → retrieves value
+
+---
+
+## Advantages of Encapsulation
+
+* ✔ Data hiding (security)
+* ✔ Controlled access
+* ✔ Validation before updating data
+* ✔ Improved maintainability
+* ✔ Flexibility to change internal implementation
+
+---
+
+## Important Notes
+
+* Always keep variables **private**
+* Use **public getters/setters** to access them
+* Add **validation logic inside setters**
+* Avoid unnecessary setters if data should not change
+
+---
+
+👉 No setter → value cannot be changed after creation
+
+---
+
+## Practice Exercise
+
+Create a class `BankAccount`:
+
+* private variables: `accountNumber`, `balance`
+* add:
+
+  * getter for balance
+  * setter with validation (balance ≥ 0)
+  * deposit and withdraw methods
+
+---
+
+## Summary
+
+Encapsulation helps you:
+
+* Protect your data
+* Control how data is accessed and modified
+* Build clean and secure Java applications
+
+---
